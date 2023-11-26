@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@900&family=Poppins:wght@300;700&display=swap');
+
+
+body {
+    background-color: black;
+    color: white;
+}
+
+.accordion-container {
+    box-sizing: border-box;
+
+}
+
+#accordion {
+    margin: 100px auto;
+    width: 600px;
+}
+
+#accordion li {
+    list-style: none;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #383838;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#accordion li label {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+/* if we use '&gt;','&lt;' then we use this beacuse it rotate 90deg 
+#accordion li label span{
+    font-size: 12px;
+    transform: rotate(90deg);
+}
+*/
+#accordion label+input[type="radio"] {
+    /* this is use for hide radio button */
+    display: none;
+}
+
+#accordion .content {
+    padding: 0 10px;
+    line-height: 26px;
+    max-height: 0;      /* it hide the inside text */
+    overflow: hidden;   
+    transition: max-height 0.5s;
+}
+
+#accordion label+input[type="radio"]:checked+.content {
+    max-height: 400px;  /* its show first one after that, when user click the 2/3 accordion that time it open*/
+}
